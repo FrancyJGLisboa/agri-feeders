@@ -1,0 +1,26 @@
+{
+  "ultima_atualizacao": "2024-12-18",
+  "fonte": "CSV Histórico IBGE/SIDRA",
+  "versao": "1.0",
+  "tamanho_arquivo": "10MB",
+  "total_municipios": 4108,
+  "periodo": "2000-2024",
+  "culturas": ["soja", "milho"],
+  "registros_area": 148463,
+  "coordenadas_cobertura": "99.8%",
+  "warnings_validacao": 2,
+  "url_dados": "https://raw.githubusercontent.com/FrancyJGLisboa/agri-feeders/main/data/ibge-data.json",
+  "descricao": "Dados históricos agrícolas de soja e milho para municípios brasileiros (2000-2024). Compatível com ferramentas de análise climática ponderada por área.",
+  "unidades": {
+    "area": "mil hectares",
+    "producao": "mil toneladas",
+    "areaTotal": "mil hectares"
+  },
+  "estrutura": {
+    "metadata": "Informações sobre fonte e período dos dados",
+    "municipios": "Coordenadas e códigos IBGE dos municípios",
+    "area": "Área plantada por cultura/ano/município",
+    "producao": "Produção por cultura/ano/município",
+    "areaTotal": "Área territorial total dos municípios"
+  }
+}
