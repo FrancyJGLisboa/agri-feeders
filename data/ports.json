@@ -1,0 +1,377 @@
+{
+  "source": "ANTAQ",
+  "updated": "2025-01-09",
+  "count": 37,
+  "ports": [
+    {
+      "code": "BRADR",
+      "name": "Angra dos Reis",
+      "uf": "RJ",
+      "lat": -23.01194,
+      "lon": -44.31639,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "CDRJ"
+    },
+    {
+      "code": "BRANT",
+      "name": "Antonina",
+      "uf": "PR",
+      "lat": -25.44417,
+      "lon": -48.69333,
+      "depth": 6.0,
+      "status": "Operando",
+      "company": "APPA"
+    },
+    {
+      "code": "BRARB",
+      "name": "Aratu",
+      "uf": "BA",
+      "lat": -12.78111,
+      "lon": -38.49694,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "Codeba"
+    },
+    {
+      "code": "BRARE",
+      "name": "Areia Branca",
+      "uf": "RN",
+      "lat": -4.81778,
+      "lon": -37.04472,
+      "depth": 7.0,
+      "status": "Operando",
+      "company": "CODERN"
+    },
+    {
+      "code": "BRPCL",
+      "name": "Barra do Riacho",
+      "uf": "ES",
+      "lat": -19.8385,
+      "lon": -40.0584,
+      "depth": 0.0,
+      "status": "Operando",
+      "company": ""
+    },
+    {
+      "code": "BRBEL",
+      "name": "Belém",
+      "uf": "PA",
+      "lat": -1.44528,
+      "lon": -48.49778,
+      "depth": 9.0,
+      "status": "Operando",
+      "company": "CDP"
+    },
+    {
+      "code": "BRCDO",
+      "name": "Cabedelo",
+      "uf": "PB",
+      "lat": -6.97305,
+      "lon": -34.83861,
+      "depth": 0,
+      "status": "Operando",
+      "company": "Docas PB"
+    },
+    {
+      "code": "BRQDB",
+      "name": "Cachoeira do Sul",
+      "uf": "RS",
+      "lat": -30.0518,
+      "lon": -52.879,
+      "depth": 0.0,
+      "status": "Inoperante",
+      "company": "SPH"
+    },
+    {
+      "code": "BRETL",
+      "name": "Estrela",
+      "uf": "RS",
+      "lat": -29.47361,
+      "lon": -51.95944,
+      "depth": 0,
+      "status": "Operando",
+      "company": "Codesp"
+    },
+    {
+      "code": "BRFNO",
+      "name": "Forno",
+      "uf": "RJ",
+      "lat": -22.97028,
+      "lon": -42.01556,
+      "depth": 11.0,
+      "status": "Operando",
+      "company": "COMAP"
+    },
+    {
+      "code": "BRFOR",
+      "name": "Fortaleza",
+      "uf": "CE",
+      "lat": -3.70972,
+      "lon": -38.47361,
+      "depth": 8.0,
+      "status": "Operando",
+      "company": "CDC"
+    },
+    {
+      "code": "BRIOS",
+      "name": "Ilhéus",
+      "uf": "BA",
+      "lat": -14.77833,
+      "lon": -39.02639,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "Codeba"
+    },
+    {
+      "code": "BRIBB",
+      "name": "Imbituba",
+      "uf": "SC",
+      "lat": -28.23139,
+      "lon": -48.65417,
+      "depth": 0,
+      "status": "Operando",
+      "company": "CDI"
+    },
+    {
+      "code": "BRSPB",
+      "name": "Itaguaí (Sepetiba)",
+      "uf": "RJ",
+      "lat": -22.93028,
+      "lon": -43.83778,
+      "depth": 0.0,
+      "status": "Operando",
+      "company": ""
+    },
+    {
+      "code": "BRITJ",
+      "name": "Itajaí",
+      "uf": "SC",
+      "lat": -26.90083,
+      "lon": -48.66639,
+      "depth": 0,
+      "status": "Operando",
+      "company": "Superintendência do Porto..."
+    },
+    {
+      "code": "BRITQ",
+      "name": "Itaqui",
+      "uf": "MA",
+      "lat": -2.57833,
+      "lon": -44.36861,
+      "depth": 0.0,
+      "status": "Operando",
+      "company": ""
+    },
+    {
+      "code": "BRLAG",
+      "name": "Laguna",
+      "uf": "SC",
+      "lat": -28.49667,
+      "lon": -48.76972,
+      "depth": 0.0,
+      "status": "Operando",
+      "company": ""
+    },
+    {
+      "code": "BRMCZ",
+      "name": "Maceió",
+      "uf": "AL",
+      "lat": -9.68306,
+      "lon": -35.72639,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "CODERN"
+    },
+    {
+      "code": "BRMAO",
+      "name": "Manaus",
+      "uf": "AM",
+      "lat": -3.1375,
+      "lon": -60.02611,
+      "depth": 0,
+      "status": "Operando",
+      "company": "SNPHA"
+    },
+    {
+      "code": "BRNAT",
+      "name": "Natal",
+      "uf": "RN",
+      "lat": -5.77278,
+      "lon": -35.205,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "CODERN"
+    },
+    {
+      "code": "BRNTR",
+      "name": "Niterói",
+      "uf": "RJ",
+      "lat": -22.88222,
+      "lon": -43.11611,
+      "depth": 6.0,
+      "status": "Operando",
+      "company": "CDRJ"
+    },
+    {
+      "code": "BRPNG",
+      "name": "Paranaguá",
+      "uf": "PR",
+      "lat": -25.50222,
+      "lon": -48.50555,
+      "depth": 12.0,
+      "status": "Operando",
+      "company": "APPA"
+    },
+    {
+      "code": "BRPET",
+      "name": "Pelotas",
+      "uf": "RS",
+      "lat": -31.78194,
+      "lon": -52.33389,
+      "depth": 0.0,
+      "status": "Operando",
+      "company": ""
+    },
+    {
+      "code": "BRPOA",
+      "name": "Porto Alegre",
+      "uf": "RS",
+      "lat": -30.00722,
+      "lon": -51.21111,
+      "depth": 0,
+      "status": "Operando",
+      "company": "SPH"
+    },
+    {
+      "code": "BRPVH",
+      "name": "Porto Velho",
+      "uf": "RO",
+      "lat": -8.74889,
+      "lon": -63.91528,
+      "depth": 0,
+      "status": "Operando",
+      "company": "SOPH"
+    },
+    {
+      "code": "BRREC",
+      "name": "Recife",
+      "uf": "PE",
+      "lat": -8.05389,
+      "lon": -34.86833,
+      "depth": 0,
+      "status": "Operando",
+      "company": "Estado de Pernambuco"
+    },
+    {
+      "code": "BRRIG",
+      "name": "Rio Grande",
+      "uf": "RS",
+      "lat": -32.0425,
+      "lon": -52.07556,
+      "depth": 14.0,
+      "status": "Operando",
+      "company": "SPH"
+    },
+    {
+      "code": "BRRIO",
+      "name": "Rio de Janeiro",
+      "uf": "RJ",
+      "lat": -22.89222,
+      "lon": -43.19528,
+      "depth": 12.0,
+      "status": "Operando",
+      "company": "CDRJ"
+    },
+    {
+      "code": "BRSSA",
+      "name": "Salvador",
+      "uf": "BA",
+      "lat": -12.96528,
+      "lon": -38.50944,
+      "depth": 0,
+      "status": "Operando",
+      "company": "Codeba"
+    },
+    {
+      "code": "BRMCP",
+      "name": "Santana",
+      "uf": "AP",
+      "lat": -0.06083,
+      "lon": -51.16694,
+      "depth": 12.0,
+      "status": "Operando",
+      "company": "CDSA"
+    },
+    {
+      "code": "BRSTM",
+      "name": "Santarém",
+      "uf": "PA",
+      "lat": -2.415,
+      "lon": -54.7375,
+      "depth": 0,
+      "status": "Operando",
+      "company": "CDP"
+    },
+    {
+      "code": "BRSSZ",
+      "name": "Santos",
+      "uf": "SP",
+      "lat": -23.96167,
+      "lon": -46.29194,
+      "depth": 14.0,
+      "status": "Operando",
+      "company": "Codesp"
+    },
+    {
+      "code": "BRSUA",
+      "name": "Suape",
+      "uf": "PE",
+      "lat": -8.39194,
+      "lon": -34.96861,
+      "depth": 14.0,
+      "status": "Operando",
+      "company": "Governo do Estado de Pern..."
+    },
+    {
+      "code": "BRSFS",
+      "name": "São Francisco do Sul",
+      "uf": "SC",
+      "lat": -26.23889,
+      "lon": -48.63472,
+      "depth": 10.0,
+      "status": "Operando",
+      "company": "APSFS"
+    },
+    {
+      "code": "BRSSO",
+      "name": "São Sebastião",
+      "uf": "SP",
+      "lat": -23.81111,
+      "lon": -45.3975,
+      "depth": 0,
+      "status": "Operando",
+      "company": "CDSS"
+    },
+    {
+      "code": "BRVDC",
+      "name": "Vila do Conde",
+      "uf": "PA",
+      "lat": -1.54417,
+      "lon": -48.74778,
+      "depth": 13.0,
+      "status": "Operando",
+      "company": "CDP"
+    },
+    {
+      "code": "BRVIX",
+      "name": "Vitória",
+      "uf": "ES",
+      "lat": -20.3225,
+      "lon": -40.33944,
+      "depth": 11.0,
+      "status": "Operando",
+      "company": "Codesa"
+    }
+  ]
+}
