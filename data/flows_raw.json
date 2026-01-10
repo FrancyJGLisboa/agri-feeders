@@ -1,0 +1,169 @@
+{
+  "metadata": {
+    "generated_at": "2026-01-10T08:30:50.539407",
+    "source": "CFTC",
+    "unit": "thousand_contracts"
+  },
+  "data": [
+    {
+      "Date": "2025-08-26",
+      "Grains": 43,
+      "Meats": 5,
+      "Oilseeds": 23,
+      "Softs": -4,
+      "Total": 67
+    },
+    {
+      "Date": "2025-09-02",
+      "Grains": 0,
+      "Meats": 12,
+      "Oilseeds": -37,
+      "Softs": -11,
+      "Total": -36
+    },
+    {
+      "Date": "2025-09-09",
+      "Grains": -37,
+      "Meats": 10,
+      "Oilseeds": -11,
+      "Softs": -44,
+      "Total": -82
+    },
+    {
+      "Date": "2025-09-16",
+      "Grains": 39,
+      "Meats": 6,
+      "Oilseeds": 18,
+      "Softs": 29,
+      "Total": 92
+    },
+    {
+      "Date": "2025-09-23",
+      "Grains": -52,
+      "Meats": -4,
+      "Oilseeds": -28,
+      "Softs": -29,
+      "Total": -113
+    },
+    {
+      "Date": "2025-09-30",
+      "Grains": -42,
+      "Meats": -4,
+      "Oilseeds": -21,
+      "Softs": 13,
+      "Total": -54
+    },
+    {
+      "Date": "2025-10-07",
+      "Grains": 20,
+      "Meats": 0,
+      "Oilseeds": 7,
+      "Softs": -15,
+      "Total": 12
+    },
+    {
+      "Date": "2025-10-14",
+      "Grains": -75,
+      "Meats": -5,
+      "Oilseeds": -9,
+      "Softs": -29,
+      "Total": -118
+    },
+    {
+      "Date": "2025-10-21",
+      "Grains": 67,
+      "Meats": -13,
+      "Oilseeds": 20,
+      "Softs": 12,
+      "Total": 86
+    },
+    {
+      "Date": "2025-10-28",
+      "Grains": 208,
+      "Meats": -34,
+      "Oilseeds": 43,
+      "Softs": -7,
+      "Total": 210
+    },
+    {
+      "Date": "2025-11-04",
+      "Grains": 94,
+      "Meats": -33,
+      "Oilseeds": 33,
+      "Softs": -19,
+      "Total": 75
+    },
+    {
+      "Date": "2025-11-10",
+      "Grains": 66,
+      "Meats": -16,
+      "Oilseeds": 12,
+      "Softs": -8,
+      "Total": 54
+    },
+    {
+      "Date": "2025-11-18",
+      "Grains": 145,
+      "Meats": -17,
+      "Oilseeds": 43,
+      "Softs": -1,
+      "Total": 170
+    },
+    {
+      "Date": "2025-11-25",
+      "Grains": -69,
+      "Meats": -15,
+      "Oilseeds": 1,
+      "Softs": -14,
+      "Total": -97
+    },
+    {
+      "Date": "2025-12-02",
+      "Grains": 57,
+      "Meats": -17,
+      "Oilseeds": 7,
+      "Softs": 14,
+      "Total": 61
+    },
+    {
+      "Date": "2025-12-09",
+      "Grains": -52,
+      "Meats": 11,
+      "Oilseeds": -35,
+      "Softs": 17,
+      "Total": -59
+    },
+    {
+      "Date": "2025-12-16",
+      "Grains": -140,
+      "Meats": 20,
+      "Oilseeds": -50,
+      "Softs": 12,
+      "Total": -158
+    },
+    {
+      "Date": "2025-12-23",
+      "Grains": -12,
+      "Meats": 17,
+      "Oilseeds": -40,
+      "Softs": 18,
+      "Total": -17
+    },
+    {
+      "Date": "2025-12-30",
+      "Grains": -38,
+      "Meats": 4,
+      "Oilseeds": 0,
+      "Softs": 21,
+      "Total": -13
+    },
+    {
+      "Date": "2026-01-06",
+      "Grains": -25,
+      "Meats": 5,
+      "Oilseeds": -10,
+      "Softs": 1,
+      "Total": -29
+    }
+  ]
+}
