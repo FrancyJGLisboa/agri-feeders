@@ -138,6 +138,12 @@ def save_data_files(df: pd.DataFrame, output_dir: str = "data"):
     df = df.copy()
     df['Date'] = df['Date'].dt.strftime('%Y-%m-%d')
 
+    # Reorder columns to match spec: Date,Grains,Oilseeds,Meats,Softs,Total
+    column_order = ['Date', 'Grains', 'Oilseeds', 'Meats', 'Softs', 'Total']
+    # Only include columns that exist
+    column_order = [c for c in column_order if c in df.columns]
+    df = df[column_order]
+
     # CSV: machine-readable tabular
     csv_path = os.path.join(output_dir, "flows_raw.csv")
     df.to_csv(csv_path, index=False)
@@ -145,11 +151,13 @@ def save_data_files(df: pd.DataFrame, output_dir: str = "data"):
 
     # JSON: API-friendly with metadata
     json_path = os.path.join(output_dir, "flows_raw.json")
+    data_range = f"{df['Date'].iloc[0]} to {df['Date'].iloc[-1]}" if len(df) > 0 else "N/A"
     json_data = {
         "metadata": {
-            "generated_at": datetime.now().isoformat(),
-            "source": "CFTC",
-            "unit": "thousand_contracts"
+            "generated_at": datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ'),
+            "source": "CFTC Disaggregated COT Report",
+            "unit": "thousand_contracts",
+            "data_range": data_range
         },
         "data": df.to_dict(orient="records")
     }
