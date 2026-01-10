@@ -4,6 +4,8 @@
 # dependencies = [
 #     "pandas>=2.0",
 #     "requests>=2.31",
+#     "xlrd>=2.0.1",
+#     "openpyxl>=3.1.0",
 # ]
 # ///
 
@@ -35,39 +37,52 @@ SECTOR_MAPPING = {
 }
 
 def download_cftc_data(year: int) -> pd.DataFrame:
-    """Download CFTC Disaggregated COT data for given year."""
-    # Use disaggregated futures data for agricultural commodities
-    zip_url = f"{CFTC_BASE_URL}/fut_disagg_xls_{year}.zip"
+    """Download CFTC Disaggregated COT data for given year(s)."""
+    import io
+    import zipfile
 
-    try:
-        import io
-        import zipfile
+    dfs = []
+    # Load current year and previous year to ensure 20+ weeks of data
+    years_to_load = [year - 1, year]
 
-        print(f"Downloading {year} CFTC disaggregated data...")
-        response = requests.get(zip_url, timeout=60)
-        response.raise_for_status()
+    for yr in years_to_load:
+        zip_url = f"{CFTC_BASE_URL}/fut_disagg_xls_{yr}.zip"
 
-        with zipfile.ZipFile(io.BytesIO(response.content)) as zf:
-            file_names = zf.namelist()
-            # Look for the disaggregated futures file
-            cot_file = [f for f in file_names if f.endswith('.xls') or f.endswith('.xlsx')][0]
-            df = pd.read_excel(zf.open(cot_file))
+        try:
+            print(f"Downloading {yr} CFTC disaggregated data...")
+            response = requests.get(zip_url, timeout=60)
+            response.raise_for_status()
 
-        print(f"Loaded {len(df):,} records")
-        return df
+            with zipfile.ZipFile(io.BytesIO(response.content)) as zf:
+                file_names = zf.namelist()
+                cot_file = [f for f in file_names if f.endswith('.xls') or f.endswith('.xlsx')][0]
+                df = pd.read_excel(zf.open(cot_file))
+                dfs.append(df)
+                print(f"Loaded {len(df):,} records from {yr}")
 
-    except Exception as e:
-        print(f"Download failed: {e}")
+        except Exception as e:
+            print(f"Warning: Could not load {yr} data: {e}")
+            continue
+
+    if not dfs:
+        print("Download failed: No data loaded")
         sys.exit(1)
+
+    combined = pd.concat(dfs, ignore_index=True)
+    print(f"Total: {len(combined):,} records")
+    return combined
 
 def process_cot_data(df: pd.DataFrame) -> pd.DataFrame:
     """Process raw COT into weekly sector flows (thousand contracts)."""
     print("Processing hedge fund flows...")
 
+    # Work with a copy to avoid SettingWithCopyWarning
+    df = df.copy()
+
     # Disaggregated data has Money Manager positions as columns, not a category filter
-    # Required columns: M_Money_Positions_Long_All, M_Money_Positions_Short_All
-    long_col = 'M_Money_Positions_Long_All'
-    short_col = 'M_Money_Positions_Short_All'
+    # Required columns: M_Money_Positions_Long_ALL, M_Money_Positions_Short_ALL
+    long_col = 'M_Money_Positions_Long_ALL'
+    short_col = 'M_Money_Positions_Short_ALL'
 
     if long_col not in df.columns or short_col not in df.columns:
         print(f"Available columns: {list(df.columns)[:10]}...")
@@ -75,25 +90,9 @@ def process_cot_data(df: pd.DataFrame) -> pd.DataFrame:
         sys.exit(1)
 
     # Parse dates
-    date_col = 'Report_Date_as_YYYY-MM-DD'
-    if date_col not in df.columns:
-        date_col = 'As_of_Date_In_Form_YYMMDD'
-    if date_col not in df.columns:
-        # Try finding any date column
-        date_cols = [c for c in df.columns if 'date' in c.lower()]
-        if date_cols:
-            date_col = date_cols[0]
-        else:
-            print("No date column found")
-            sys.exit(1)
-
-    df['Date'] = pd.to_datetime(df[date_col])
+    df['Date'] = pd.to_datetime(df['Report_Date_as_MM_DD_YYYY'])
 
     # Map commodities to sectors using Market_and_Exchange_Names
-    name_col = 'Market_and_Exchange_Names'
-    if name_col not in df.columns:
-        name_col = 'Commodity_Name' if 'Commodity_Name' in df.columns else df.columns[0]
-
     def get_sector(name):
         name_upper = str(name).upper()
         for key, sector in SECTOR_MAPPING.items():
@@ -101,10 +100,10 @@ def process_cot_data(df: pd.DataFrame) -> pd.DataFrame:
                 return sector
         return None
 
-    df['Sector'] = df[name_col].apply(get_sector)
+    df['Sector'] = df['Market_and_Exchange_Names'].apply(get_sector)
 
     # Filter to mapped commodities only
-    df = df.dropna(subset=['Sector'])
+    df = df.dropna(subset=['Sector']).copy()
 
     if df.empty:
         print("No matching commodities found")
