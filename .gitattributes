@@ -1,1 +1,2 @@
+dataset_cafe_2000_2024.csv filter=lfs diff=lfs merge=lfs -text
 data/climatology/**/*.json filter=lfs diff=lfs merge=lfs -text
