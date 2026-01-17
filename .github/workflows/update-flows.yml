@@ -2,8 +2,8 @@ name: Update CFTC Hedge Fund Flows
 
 on:
   schedule:
-    # Runs every Friday at 18:00 UTC (CFTC releases data around 15:30 EST)
-    - cron: '0 18 * * 5'
+    # Runs every Friday at 21:00 UTC (after CFTC releases data around 15:30 EST / 20:30 UTC)
+    - cron: '0 21 * * 5'
   workflow_dispatch:  # Manual trigger button in GitHub UI
 
 jobs:
