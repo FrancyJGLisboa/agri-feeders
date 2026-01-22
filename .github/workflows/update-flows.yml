@@ -6,6 +6,10 @@ on:
     - cron: '0 21 * * 5'
   workflow_dispatch:  # Manual trigger button in GitHub UI
 
+concurrency:
+  group: cftc-update
+  cancel-in-progress: false
+
 jobs:
   update-data:
     runs-on: ubuntu-latest
@@ -31,6 +35,11 @@ jobs:
 
       - name: Run data update script
         run: uv run update_flows.py
+
+      - name: Pull latest changes
+        run: |
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
